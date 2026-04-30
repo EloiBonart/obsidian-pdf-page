@@ -1,8 +1,6 @@
 import { Plugin, TFile, MarkdownPostProcessorContext } from "obsidian";
-import * as pdfjsLib from "pdfjs-dist";
-
-// Use the bundled worker
-pdfjsLib.GlobalWorkerOptions.workerSrc = "";
+// Legacy build runs on the main thread — no workerSrc needed
+import * as pdfjsLib from "pdfjs-dist/legacy/build/pdf";
 
 interface PdfPageParams {
 	path: string;
