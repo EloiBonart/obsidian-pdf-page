@@ -1,6 +1,10 @@
 import { Plugin, TFile, MarkdownPostProcessorContext } from "obsidian";
-// Legacy build runs on the main thread — no workerSrc needed
 import * as pdfjsLib from "pdfjs-dist/legacy/build/pdf";
+import workerCode from "pdf.worker";
+
+// Bundle the worker inline as a Blob URL — no external file needed
+const workerBlob = new Blob([workerCode], { type: "application/javascript" });
+pdfjsLib.GlobalWorkerOptions.workerSrc = URL.createObjectURL(workerBlob);
 
 interface PdfPageParams {
 	path: string;
