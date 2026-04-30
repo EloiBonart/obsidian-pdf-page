@@ -1,0 +1,10 @@
+{
+  "id": "obsidian-pdf-page",
+  "name": "PDF Page Viewer",
+  "version": "1.0.0",
+  "minAppVersion": "0.15.0",
+  "description": "Render individual PDF pages inline in Markdown notes using a custom code block.",
+  "author": "Eloi Bonart",
+  "authorUrl": "https://github.com/eloibonart",
+  "isDesktopOnly": true
+}
